@@ -1,0 +1,567 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AYISHA JASMA | Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* ===== General Styles ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f8f6f0;
+      color: #4b2e05;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== Header / Navigation ===== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #4b2e05;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      z-index: 1000;
+    }
+
+    .nav-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-logo {
+      width: 45px;
+      margin-bottom: 5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #d4b17b;
+    }
+
+    /* ===== Sections ===== */
+    .section {
+      padding: 100px 80px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* ===== Home Section ===== */
+    .home-section {
+      text-align: center;
+      background-color: #f8f6f0;
+      padding-top: 150px;
+      position: relative;
+    }
+
+    .home-box {
+      background-color: #fff;
+      border: 1px solid #d4b17b;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 50px 40px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .home-box h1 {
+      font-size: 2.5rem;
+      color: #4b2e05;
+    }
+
+    .home-box h1 span {
+      color: #7b4f1d;
+      font-weight: 700;
+    }
+
+    .home-box h3 {
+      margin-top: 10px;
+      font-weight: 500;
+      color: #7b4f1d;
+    }
+
+    .home-box p {
+      margin: 20px auto;
+      width: 85%;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #5a3b14;
+    }
+
+    .btn {
+      background-color: #4b2e05;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      display: inline-block;
+      margin-top: 15px;
+    }
+
+    .btn:hover {
+      background-color: #7b4f1d;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 30px;
+    }
+
+    .skill {
+      text-align: center;
+    }
+
+    .skill img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .skill p {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #4b2e05;
+    }
+
+    /* ===== Bottom Social Icons ===== */
+    .socials {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 25px;
+    }
+
+    .socials a {
+      color: #4b2e05;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #7b4f1d;
+    }
+
+    /* ===== About Section ===== */
+    .about-section {
+      background-color: #fffaf2;
+      text-align: center;
+      padding-top: 150px;
+    }
+
+    .about-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #4b2e05;
+    }
+
+    .about-box {
+      background-color: #fff;
+      border: 1px solid #d4b17b;
+      border-radius: 12px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      padding: 25px;
+      max-width: 800px;
+      margin: 25px auto;
+      text-align: left;
+    }
+
+    .about-box h3 {
+      color: #4b2e05;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about-box p,
+    .about-box li {
+      color: #5a3b14;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .about-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .about-box li {
+      margin-bottom: 8px;
+    }
+
+    .about-box i {
+      color: #d4b17b;
+      font-size: 1.2rem;
+    }
+
+    /* ===== Projects Section ===== */
+    .projects-section {
+      background-color: #fdfaf5;
+      text-align: center;
+      padding-top: 150px;
+    }
+
+    .projects-section h2 {
+      font-size: 2.2rem;
+      color: #4b2e05;
+      margin-bottom: 40px;
+    }
+
+    .project-box {
+      background-color: #fff;
+      border: 1px solid #d4b17b;
+      border-radius: 12px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      padding: 25px;
+      max-width: 800px;
+      margin: 25px auto;
+      text-align: left;
+    }
+
+    .project-box h3 {
+      font-size: 1.4rem;
+      color: #7b4f1d;
+      margin-bottom: 10px;
+    }
+
+    .project-box p {
+      color: #5a3b14;
+      line-height: 1.6;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .project-logo {
+      width: 50px;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+
+    /* ===== Contact Section ===== */
+    .contact-section {
+      background-color: #fffaf2;
+      text-align: center;
+      padding-top: 150px;
+    }
+
+    .contact-box {
+      background-color: #fff;
+      border: 1px solid #d4b17b;
+      border-radius: 12px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      padding: 25px;
+      max-width: 800px;
+      margin: 25px auto;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-size: 2rem;
+      color: #4b2e05;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      color: #5a3b14;
+      margin-bottom: 25px;
+    }
+
+    .contact-info {
+      text-align: left;
+      margin: 20px 0;
+    }
+
+    .contact-info p {
+      font-size: 1rem;
+      color: #4b2e05;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .contact-info i {
+      color: #d4b17b;
+      font-size: 1.2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    form label {
+      font-weight: 600;
+      color: #4b2e05;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #d4b17b;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    form textarea {
+      height: 100px;
+      resize: none;
+    }
+
+    form button {
+      background-color: #4b2e05;
+      color: #fff;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    form button:hover {
+      background-color: #7b4f1d;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: #4b2e05;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+
+      .skills {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .home-box p {
+        width: 95%;
+      }
+
+      .socials {
+        flex-direction: column;
+        bottom: 20px;
+        gap: 15px;
+      }
+
+      .about-box,
+      .project-box,
+      .contact-box {
+        width: 90%;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Logo" class="nav-logo">
+      <nav>
+        <ul>
+          <li><a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
+          <li><a href="#projects"><i class="fa-solid fa-briefcase"></i> Projects</a></li>
+          <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="section home-section">
+    <div class="home-box">
+      <h1>Hi, I'm <span>AYISHA JASMA</span></h1>
+      <h3>BBA Finance - MBA & Data Science Learner - Artist</h3>
+      <p>
+        As an MBA & Data Science learner, my deeper interest and excitement to solve problems 
+        have shaped my decision to step into the world of data. I am passionate about learning 
+        and transforming ideas into results.
+      </p>
+      <a href="#contact" class="btn">HIRE ME</a>
+
+      <div class="skills">
+        <div class="skill">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python Logo">
+          <p>Python Developer</p>
+        </div>
+        <div class="skill">
+          <img src="https://cdn-icons-png.flaticon.com/512/888/888850.png" alt="Data Analyst Logo">
+          <p>Data Analyst</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="socials">
+      <a href="mailto:jasmajasimjasma@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="tel:9995433287"><i class="fa-solid fa-phone"></i></a>
+      <a href="https://www.linkedin.com/in/aysha-jasma-738483369" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/__ays_ha?igsh=MWs0cnM2Z251cW8yeQ==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about-section">
+    <h2>About Me</h2>
+
+    <div class="about-box">
+      <h3><i class="fa-solid fa-user"></i> About Me</h3>
+      <p>
+        Hi, I'm <b>Ayisha Jasma</b>, an enthusiastic <b>MBA & Data Science</b> learner with a background in <b>BBA Finance</b>.
+        My interests span across analytics, problem-solving, and creative artistry.
+        I enjoy combining business insights with data-driven decision-making.
+      </p>
+    </div>
+
+    <div class="about-box">
+      <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+      <ul>
+        <li><b>MBA (ongoing, 2025)</b> - Manipal University, Jaipur</li>
+        <li><b>PG Diploma in Data Science (ongoing, 2025)</b> - Westberg International Institution, Calicut</li>
+        <li><b>BBA Finance</b> - MES Kalladi College, Mannarkkad (Graduated 2025)</li>
+        <li><b>Higher Secondary Education</b> - PTM HSS, Thazhekode (2020–22) - 80%</li>
+        <li><b>SSLC</b> - PTM HSS, Thazhekode</li>
+      </ul>
+    </div>
+
+    <div class="about-box">
+      <h3><i class="fa-solid fa-code"></i> Skills</h3>
+      <ul>
+        <li><b>Programming:</b> Python, R, SQL, NumPy, Pandas, HTML, CSS, JavaScript</li>
+        <li><b>BBA:</b> Financial Software Proficiency, Data Analysis, Problem Solving, Financial Modeling</li>
+        <li><b>Soft Skills:</b> Communication, Creativity, Teamwork</li>
+        <li><b>Creative:</b> Calligraphy, Drawing, Henna Design, Crafting</li>
+      </ul>
+    </div>
+
+    <div class="about-box">
+      <h3><i class="fa-solid fa-language"></i> Languages</h3>
+      <ul>
+        <li>English – Fluent</li>
+        <li>Malayalam – Native</li>
+        <li>Hindi – Basic</li>
+        <li>Arabic – Basic</li>
+      </ul>
+    </div>
+
+    <div class="about-box">
+      <h3><i class="fa-solid fa-certificate"></i> Certificates</h3>
+      <ul>
+        <li>Tally Essential Comprehensive (TEPL)</li>
+        <li>Indian Book of Record (Arabic Calligraphy – 2022)</li>
+      </ul>
+    </div>
+
+    <div class="about-box">
+      <h3><i class="fa-solid fa-briefcase"></i> Experience</h3>
+      <p>
+        Artist & Crafter (Freelancer) – Customize handmade crafts, draw client portraits, and create henna designs for brides.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section projects-section">
+    <h2>My Projects</h2>
+
+    <div class="project-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="Projects Logo" class="project-logo">
+      <h3>Consumer Buying Behaviour</h3>
+      <p>
+        Analysed the consumer buying behaviour with special reference to Jamjoom Hypermarket, Perinthalmanna.
+      </p>
+
+      <h3>Portfolio Website</h3>
+      <p>
+        Created a personal website to showcase projects using HTML and CSS.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <div class="contact-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/3095/3095583.png" alt="Contact Logo" class="project-logo">
+      <h2>Contact Me</h2>
+      <p>If you'd like to get in touch, feel free to use any of the options below.</p>
+
+      <div class="contact-info">
+        <p><i class="fa-solid fa-phone"></i> +91 9995433287</p>
+        <p><i class="fa-solid fa-envelope"></i> jasmajasimjasma@gmail.com</p>
+        <p><i class="fa-brands fa-linkedin"></i> linkedin.com/in/aysha-jasma-738483369</p>
+      </div>
+
+      <h3 style="color:#7b4f1d; margin-top:20px;">Send Message</h3>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        
+       <label for="message">Message:</label>
+       <textarea id="message" placeholder="Enter your message">
+</textarea>
+
+       <button type="submit">Send</button>
+      </form>
+     </div>
+    </section>
+
+    <footer> 
+     <p>© 2025 AYISHA JASMA | MBA & Data Science Learner & Fresher</p>
+    </footer> 
+</body> 
+</html>
